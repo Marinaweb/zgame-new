@@ -12,12 +12,12 @@ const imagemin     = require('gulp-imagemin');
 const pngquant     = require('imagemin-pngquant');
 // const cache        = require('gulp-cache');
 const jsFiles      = [
-						'./assets/libs/fancybox/jquery.fancybox.js',
-						'./assets/libs/scroller/jquery.mCustomScrollbar.js'
+						'./assets/libs/fancybox/dist/jquery.fancybox.js',
+						'./assets/libs/slick-carousel/slick/slick.js'
 					];
 const cssFiles      = [
-						'./assets/libs/fancybox/jquery.fancybox.css',
-						'./assets/libs/scroller/jquery.mCustomScrollbar.css'
+						'./assets/libs/fancybox/dist/jquery.fancybox.css',
+						'./assets/libs/slick-carousel/slick/slick.css'
 					];
 
 function sass_my(){
@@ -104,9 +104,9 @@ gulp.task('images', images);
 gulp.task('watch', watch);
 
 gulp.task('build', gulp.series(clean, //пересоберет заново все
-		gulp.parallel(sass_my, scripts_custom, images)
+		gulp.parallel(sass_my, scripts_custom, images, css_libs, scripts_libs)
 		//здесь либо названия функций без '' либо название таска в''
-		// css_libs, scripts_libs, fonts,
+		//  fonts,
 	));
 
 gulp.task('dev', gulp.series('build', 'watch')); //пересоберет заново все + запустит watcher

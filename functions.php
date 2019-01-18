@@ -16,10 +16,10 @@ add_action( 'wp_enqueue_scripts', 'zgame_styles' );
 // To add scripts ******************************************************************************
     // *****************************************************************************************
 function zgame_scripts() {  
+    wp_register_script( 'libs-js', get_template_directory_uri() . '/build/js/libs.min.js', array( 'jquery' ) );
+    wp_enqueue_script( 'libs-js' );
     wp_register_script( 'custom', get_template_directory_uri() . '/build/js/custom.js', array( 'jquery' ) );
     wp_enqueue_script( 'custom' );
-    wp_register_style( 'libs.min', get_template_directory_uri() . '/build/js/libs.min.js' );
-    wp_enqueue_style( 'libs.min' );
 }
 add_action( 'wp_enqueue_scripts', 'zgame_scripts' );
 
@@ -31,7 +31,7 @@ add_theme_support( 'post-thumbnails' );
 // woocommerce
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
-add_theme_support( 'woocommerce' );
+    add_theme_support( 'woocommerce' );
 }
 
 // Menu *****************************************************************************************
@@ -92,7 +92,7 @@ function action_woocommerce_after_shop_loop_item() {
         echo '<div class="instock_inner not_instock">' . 'Нет в наличии' . '</div>';
     }
 };
-add_action( 'woocommerce_after_shop_loop_item_title', 'action_woocommerce_after_shop_loop_item', 5 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'action_woocommerce_after_shop_loop_item', 10 );
 
 
 /** подключаем  ЛАЙТБОКС-lightbox - галерею **/
@@ -137,3 +137,17 @@ function cart_update_qty_script() {
     endif;
 }
 
+// Добавление грн
+add_filter( 'woocommerce_currencies', 'add_my_currency' );
+function add_my_currency( $currencies ) {
+     $currencies['UAH'] = __( 'Українська гривня', 'woocommerce' );
+     return $currencies;
+}
+
+add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+function add_my_currency_symbol( $currency_symbol, $currency ) {
+     switch( $currency ) {
+         case 'UAH': $currency_symbol = '  грн'; break;
+     }
+     return $currency_symbol;
+}
