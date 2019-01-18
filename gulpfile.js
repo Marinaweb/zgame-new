@@ -10,7 +10,7 @@ const uglify       = require('gulp-uglifyjs');
 const rename       = require('gulp-rename');
 const imagemin     = require('gulp-imagemin');
 const pngquant     = require('imagemin-pngquant');
-const cache        = require('gulp-cache');
+// const cache        = require('gulp-cache');
 const jsFiles      = [
 						'./assets/libs/fancybox/jquery.fancybox.js',
 						'./assets/libs/scroller/jquery.mCustomScrollbar.js'
@@ -104,8 +104,9 @@ gulp.task('images', images);
 gulp.task('watch', watch);
 
 gulp.task('build', gulp.series(clean, //пересоберет заново все
-		gulp.parallel(sass_my, scripts_custom, css_libs, scripts_libs, fonts, images)
+		gulp.parallel(sass_my, scripts_custom, images)
 		//здесь либо названия функций без '' либо название таска в''
+		// css_libs, scripts_libs, fonts,
 	));
 
 gulp.task('dev', gulp.series('build', 'watch')); //пересоберет заново все + запустит watcher
