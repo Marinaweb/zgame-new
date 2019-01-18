@@ -14,7 +14,7 @@
 			<div class="header_top container">
 				<?php wp_nav_menu(array('theme_location'=>'header_menu_top', 'menu_class'=>'header_menu_top')); ?>
 			</div>
-			<div class="header_middle">
+			<div class="header_middle container">
 				<div class="logo_h">
 					<a href="/"><img src="<?php bloginfo('template_url') ?>/build/images/logo.png"></a>
 				</div>
@@ -42,7 +42,9 @@
 		<div class="header_bottom">
 			<div class="container">
 				<?php wp_nav_menu(array('theme_location'=>'header_menu', 'menu_class'=>'header_menu')); ?>
-				<?php echo do_shortcode('[product_categories columns="4"]'); ?>
+				<div class="product_categories">
+					<?php echo do_shortcode('[product_categories columns="4"]'); ?>
+				</div>
 			</div>			
 		</div>
 

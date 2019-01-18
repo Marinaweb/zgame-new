@@ -99,18 +99,20 @@ jQuery(document).ready(function() {
 	jQuery(".modalbox").fancybox();
 
 
-	// To show more video
-	// jQuery(".more_video").click(function(){
-	// 	jQuery(this).addClass("hidden");
-	// 	jQuery(".less_video").addClass("visible");
-	// 	jQuery(".video_another").slideDown();
-	// });
-	// jQuery(".less_video").click(function(){
-	// 	jQuery(this).addClass("hidden");
-	// 	jQuery(".more_video").addClass("visible").removeClass("hidden");
-	// 	jQuery(".video_another").slideUp();
-	// });
-	
+	// to open popular categories
+    jQuery(".all_categories ").click(function() {
+        jQuery(".product_categories").toggleClass("visible_menu");
+    });
+
+    // to close menu by clicking anywhere
+    jQuery(function () {
+        jQuery(document).on('click', function (e) {
+          if (!jQuery(e.target).closest('.all_categories').length) {
+              jQuery(".product_categories").removeClass("visible_menu");
+          }
+          e.stopPropagation();
+      });
+    })
 
 
 });  // jQuery(document).ready(function() END
