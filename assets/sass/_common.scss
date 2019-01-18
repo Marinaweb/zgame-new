@@ -1,0 +1,99 @@
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+html {height: 100%;}
+body {
+	height: 100%;
+	font: 15px/19px 'Open Sans', sans-serif;
+}
+.no-scroll {
+	overflow: hidden!important;
+}
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ol, ul, li {list-style: none;}
+a, a:hover {text-decoration: none;}
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {clear: both;}
+.left {float:left;}
+.right {float:right;}
+.text-right {text-align: right;}
+.text-center {text-align: center;} 
+.center {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+h1 {
+	font-size: 50px;
+}
+h2 {
+	font-size: 24px;
+}
+h3 {
+	font-size: 20px;
+}
+h4 {
+	font-size: 18px;
+}
+h5 {
+	font-size: 17px;
+}
+h6 {
+	font-size: 16px;
+}
+p {
+	font-size: 14px;
+	line-height: 15px;
+}
+.alignleft {
+	display: inline;
+	float: left;
+	margin: 15px 15px 15px 0;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin: 15px 0 15px 15px 15px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 15px auto 15px auto;
+}
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic; 
+}
+a, a:hover {
+	text-decoration: none;
+}
