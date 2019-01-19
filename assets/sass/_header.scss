@@ -1,11 +1,25 @@
 .header_first {
 	background: url("../images/header_bg.jpg") no-repeat;
-	.header_menu_top {
-		display: flex;
-		padding-left: 180px;
+	.header_top {
+		height: 30px;
 		background-color: #0f0f0f;	
 		opacity: 0.85;
-	} 
+		.header_menu_top {
+			display: flex;
+			height: 30px;
+			align-items: center;
+			padding-left: 180px;
+			li {
+				padding: 10px;				
+				a {
+					color: white;
+					font-family: Lato;
+					font-size: 14px;
+					font-weight: 700;
+				}
+			}
+		} 
+	}
 }
 .header_middle {
 	display: flex;
@@ -16,12 +30,118 @@
 	> div {
 		flex-grow: 1;
 	}
+	.tel_h {
+		display: flex;
+		flex-direction: column;
+		a {
+			color: #001521;
+			font-family: Lato;
+			font-size: 20px;
+			font-weight: 500;
+			padding: 8px 0;		
+			display: flex;
+			align-items: center;	
+		}
+		.tel_1 i {
+			background: url("../images/tel_header_icon.png") no-repeat; 
+			width: 28px;
+			height: 28px;
+			display: block;
+			margin-right: 10px
+		}
+		.tel_2 i {
+			background: url("../images/viber_icon.png") no-repeat; 
+			width: 28px;
+			height: 28px;
+			display: block;
+			margin-right: 10px
+		}
+	}
+	.call_h {
+		.modalbox {
+			width: 235px;
+			height: 45px;
+			display: flex;
+			color: white;
+			align-items: center;
+			justify-content: center;
+			background: #61a3a7;
+			box-shadow: 0 0 5px rgba(112, 112, 112, 0.3);
+			&:hover {
+				background: #5c9b9f;
+			}
+		}
+		p {
+			color: #001521;
+			font-family: Lato;
+			font-size: 16px;
+			font-weight: 500;
+			margin-top: 8px;
+			margin-left: 25px;
+		}
+	}	
 	.search_h {
 		flex-grow: 2;
+		.widget_product_search {
+			position: relative;
+    		max-width: 350px;
+		}
+		.search-field {
+			width: 100%;
+			max-width: 350px;
+			height: 45px;
+			border: 0;
+			box-shadow: 0 0 5px rgba(112, 112, 112, 0.3);
+			background-color: #ffffff;
+			font-family: Lato;
+			font-size: 16px;
+			color: #b8b8b8;
+			padding: 0 35px 0 20px;
+		}
+		button {
+			font-size: 0;
+			background: url("../images/search.png") no-repeat; 
+			height: 20px;
+			width: 20px;
+			position: absolute;
+		    top: 14px;
+		    right: 14px;
+		    border: 0;
+		    cursor: pointer;
+		}
+	}
+}
+
+#modal_call {
+	h2 {
+		margin-bottom: 20px
+	}
+	input {
+		height: 40px;
+		width: 100%;
+		margin-bottom: 10px;
+		border-radius: 5px;
+		border: 1px solid green;
+		padding: 5px;
+		&[type="submit"] {
+			background: green;
+			color: white;
+			height: 50px;
+			font-size: 20px;
+
+		}
+	}
+	textarea {
+		border: 1px solid green;
+		border-radius: 5px;
+		width: 100%;
+		padding: 5px;
+		height: 120px;
 	}
 }
 .header_bottom {
 	height: 60px;
+	background-color: #d75149;
 	.header_menu {
 		display: flex;
 		height: 60px;
@@ -29,27 +149,66 @@
 		li {
 			flex-grow: 1;
 			text-align: center;
+			a {
+				font-family: "Lato - Semibold";
+				font-size: 20px;
+				font-weight: 400;
+				color: #f0f0f0;
+				text-transform: uppercase;
+				cursor: pointer;
+				&:hover {
+					color: #e1c2c2;
+				}
+			}
 		}
 	}
 	.product_categories {
 		display: none;
 		a {
-/*			display: flex;
-			align-items: center;*/
+			display: block;
 			img {
 				float: left;
-			max-width: 100% !important;
-				width: 40px !important;
-	/*				flex-basis: 40px;
-				flex-grow: 1;
-				height: auto !important;*/
+				display: block;
+				width: auto !important;
+				max-width: 40px !important;
+				margin-right: 10px !important;
+			}
+			.count {
+				display: none;
 			}
 		}
 		&.visible_menu {
-			display: flex;
+			display: block;
+    		width: 65%;
 			z-index: 5;
     		position: relative;
+    		box-shadow: 0 0 5px 1px rgba(112, 112, 112, 0.5);
+			background-color: #ffffff;
+			top: 0;
+			padding: 20px 0 5px 20px;
+			li {
+				margin-bottom: 0 !important;
+			}
+			.woocommerce-loop-category__title {
+				font-family: "Lato - Semibold";
+				font-size: 20px;
+				font-weight: 400;
+				color: #61699d;
+				&:hover {
+					color: #61a3a7;;
+				}
+			}
 		}
 	}
 
+}
+.cart-contents {
+	position: relative;
+	.basket-btn__counter {
+		position: absolute;
+		color: white;
+		font-weight: 600;
+		bottom: 11px;
+		left: 31px;
+	}
 }

@@ -6,36 +6,387 @@
 	display: none;
 }
 .front_sliders {
-/*	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-*/
+	.manufacturers_wrap {
+		float: left;
+		width: 25%;
+		h2 {
+			margin: 15px 0;
+			text-align: center;
+		}
+		.man_slide {
+			display: flex !important; 
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+	}
+	.slider_banner_wrap {
+		float: right;
+		width: 70%;
+		margin: 20px 0 0 0;
+	}
 }
+.slick-dots {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	margin-top: 8px;
+	li {
+		width: 13px;
+		height: 13px;
+		background-color: #e8e8e8;
+		margin-right: 5px;
+		&.slick-active {
+			width: 17px;
+			height: 17px;
+			background-color: #d75149;
+		}
+		button {
+			display: none;
+		}
+	}
+}
+
 .popular_cat {
 	display: flex;
-	flex-grow: 1;
-	justify-content: space-between;
+	justify-content: space-around;
+	text-align: center; 
+	padding: 40px 0;
+	a {
+		flex: 1;
+		h3 {
+			color: #353b61;
+			font-family: Lato;
+			font-size: 18px;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-top: 15px;
+		}
+	}
+}
+.h2_title {
+	color: #353b61;
+	font-family: Lato;
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
 	text-align: center;
+	margin-bottom: 45px;
 }
 .front_products_inner {
 	display: flex;
 	justify-content: space-between;
+	.product_item {
+		position: relative;
+		flex-basis: 255px;
+		box-shadow: 0 0 5px rgba(112, 112, 112, 0.3);
+		background-color: #ffffff;
+		margin-bottom: 15px;
+		padding: 15px 10px;;;;;;
+		.game_img {
+			height: 240px;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				max-width: 100%;
+			}
+		}
+		.game_title {
+			color: #353b61;
+			font-family: Lato;
+			font-size: 18px;
+			font-weight: 400;
+			margin-bottom: 40px;
+			margin-top: 20px;
+			display: block;
+		}
+		.price_stock {
+			display: flex;
+			.price {
+				flex: 1;
+				padding-right: 15px;
+				display: flex;
+				flex-direction: column-reverse;
+				ins {
+					text-decoration: none;
+					span {
+						color: #d75149;
+						float: right;
+						font-family: Lato;
+						font-size: 30px;
+						font-weight: 700;
+						line-height: 30px;
+						.woocommerce-Price-currencySymbol {
+							font-size: 18px;
+						}						
+					}
+				} 
+				del {
+					color: #a8a8a8;
+					span {
+						color: #a8a8a8;
+						float: right;
+						text-decoration: line-through;
+						font-family: Lato;
+						font-size: 22px;
+						font-weight: 700;
+						line-height: 30px;
+						font-size: 19px;
+						.woocommerce-Price-currencySymbol {
+							font-size: 16px;
+						}					
+					}
+				} 
+			}
+			.in_stock {
+				flex: 1;
+				padding-top: 8px;				
+				.stock {
+					position: relative;
+					padding-left: 20px;
+					&:before {
+						position: absolute;
+						display: block;
+						content: "";
+						width: 15px;
+						left: 0;
+						height: 15px;
+						background: url("../images/tick.png") no-repeat;
+					}
+				}
+				div {
+					font-family: Lato;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 14px;
+					color: #6cb4b8;
+				}
+			}
+		}
+		.buttons {
+			display: flex;
+			flex-direction: column;
+			.clickBuyButton {
+				width: 100%;
+				margin: 0;
+				background: #61a3a7;
+				color: white;
+				font-size: 14px;
+				height: 33px;
+				border: 1px solid #b2aba5;
+				border-radius: 3px;
+				margin-bottom: 8px;
+				margin-top: 15px;
+				&:hover {
+					box-shadow: none;
+					background: #5c9b9f;
+				}
+			}
+			.single_add_to_cart_button {
+				width: 100%;
+				background: #61a3a7;
+				color: white;
+				font-size: 14px;
+				height: 33px;
+				border: 1px solid #b2aba5;
+				border-radius: 3px;
+				cursor: pointer;
+				&:hover{
+					background: #5c9b9f;
+				}
+			}
+		}		
+	}
+}
+.attr_product {
+	display: block;
+	position: absolute;
+	top: 99%;
+	width: 100%;
+	z-index: 5;
+	background: white;
+	margin-left: -10px;
+	box-shadow: 0px 5px 7px 1px rgba(112, 112, 112, 0.5);
+	padding: 10px 25px;
+	.atribute_wrap {
+		display: flex;
+		.atribute_img {
+			margin-right: 10px;
+		    height: 25px;
+		    width: 25px;
+		}
+		&.vremya-igry .atribute_img {
+			background: url("../images/game_time.png") no-repeat;
+		}
+		&.kolichestvo-igrokov .atribute_img {
+			background: url("../images/game_count.png") no-repeat;
+		}
+		&.vozrast .atribute_img {
+			background: url("../images/game_age.png") no-repeat;
+		}
+		&.yazyk .atribute_img {
+			background: url("../images/game_lang.png") no-repeat;
+		}
+	}
+	.atribute_item {
+		font-family: Lato;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 20px;
+		color: #353b61;
+		letter-spacing: -0.35px;
+	}
+	.type {
+		color: #353b61;
+		font-family: "Helvetica Neue Cyr - Roman";
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: -0.35px;
+		text-align: center;
+		margin-bottom: 10px;		
+	}
+}
+.product_item:hover {
+	height: 120%;
+	box-shadow: 0 0 7px 1px rgba(112, 112, 112, 0.5);
+}
+.product_item:hover .attr_product {
+	display: block;
+}
+.b1c-form {
+	h2 {
+		margin-bottom: 25px;
+	}
+	table {
+		width: 100%;
+	}
+	.button.buyButtonOkForm {
+    	padding: 10px 30px;
+    	width: 50% !important;
+	}
 }
 .sidebar {
-	/*flex-grow: 2;*/
+	flex: 25%;
 }
 .main_part {
-	/*flex-grow: 2;*/
+	flex: 72%;
 	.main_part_inner {
 		display: flex;
 		justify-content: space-between;	
 		flex-wrap: wrap;
-		.product_item {
-			flex-basis: 250px;
-			text-align: center;
-		}
 	}
+}
+.front_products {
+	padding: 0 0 60px 0;
 }
 .attr_product {
 	display: none;
+}
+.about_us_inner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	.about_item {
+		flex: 1 33%;
+		display: flex;
+		margin-bottom: 40px;
+		align-items: center;
+		.about_img {
+			flex: 15%;
+			padding-right: 30px;
+		}
+		h4 {
+			color: #d75149;
+			font-family: "Lato - Heavy";
+			font-size: 19px;
+			font-weight: 400;
+			line-height: 30px;
+		}
+		p {
+			font-family: Lato;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 30px;
+			color: #353b61;
+		}
+	}
+}
+
+.name_date {
+	display: flex;
+	justify-content: space-between;
+}
+
+.testimonials {
+	background-color: #f3f3f3;
+	padding: 25px 0;
+	margin-bottom: 50px;
+	.slick-slide {
+		padding: 0 20px;
+		h5 {
+			color: #000000;
+			font-family: Lato;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 22px;
+		}
+		.testim_date {
+			color: #000000;
+			font-family: Lato;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 22px;
+		}
+		.testim_content {
+			padding-top: 20px;
+			p {
+				color: #443f5c;
+				font-family: Lato;
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 30px;
+			}
+		} 
+	}
+}
+.slick-next.slick-arrow {
+	position: absolute;
+	top: 50%;
+	right: -64px;
+	height: 108px;
+	width: 64px;
+	margin-top: -54px;
+	font-size: 0;
+	border: 0;
+	background: url("../images/arrow_next.png") no-repeat;
+	cursor: pointer;
+}
+.slick-prev.slick-arrow {
+	position: absolute;
+	top: 50%;
+	left: -64px;
+	height: 108px;
+	width: 64px;
+	margin-top: -54px;
+	font-size: 0;
+	border: 0;
+	background: url("../images/arrow_prev.png") no-repeat;
+	cursor: pointer;
+}
+.video_games {
+	margin-bottom: 50px;
+	.slick-slide {
+		padding: 10px;
+	}
+}
+.sb_instagram_header {
+	display: none;
+}
+.instagram_front {
+	margin-bottom: 50px;
+}
+.yrc-section,
+.yrc-content {
+	overflow: visible !important;
 }

@@ -11,8 +11,10 @@
 
 	<header id="header">
 		<div class="header_first">
-			<div class="header_top container">
-				<?php wp_nav_menu(array('theme_location'=>'header_menu_top', 'menu_class'=>'header_menu_top')); ?>
+			<div class="header_top">
+				<div class="container">
+					<?php wp_nav_menu(array('theme_location'=>'header_menu_top', 'menu_class'=>'header_menu_top')); ?>
+				</div>
 			</div>
 			<div class="header_middle container">
 				<div class="logo_h">
@@ -35,6 +37,9 @@
 				<div class="basket_h">
 					<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>">
 						<img src="<?php bloginfo('template_url') ?>/build/images/basket.png">
+						<span class="basket-btn__counter">
+				            <?php echo WC()->cart->get_cart_contents_count(); ?> 
+				        </span>
 					</a>
 				</div>
 			</div>

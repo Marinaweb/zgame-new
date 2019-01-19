@@ -9,9 +9,9 @@
         while(have_posts() ): the_post(); 
 ?>
 
-	<div class="front_sliders container">
+	<div class="front_sliders container clearfix">
 		<div class="manufacturers_wrap">
-			<h2 class="h2_title">Производители настольных игр</h2>
+			<h2 class="h2">Производители настольных игр</h2>
 			<div class="manufacturers">			
 				<div class="man_slide">
 					<img src="<?php bloginfo('template_url') ?>/build/images/manufacturer_1.png">	
@@ -55,11 +55,11 @@
 	</div><!-- .front_sliders -->
 
 	<div class="popular_cat container">
-		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_easy_games.png"><p>Простые игры</p></a>
-		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_for_children.png"><p>Для детей</p></a>
-		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_for_family.png"><p>Для всей семьи</p></a>
-		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_for_two.png"><p>Для двоих</p></a>
-		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_for_company.png"><p>Для компании</p></a>
+		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_easy_games.png"><h3>Простые игры</h3></a>
+		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_for_children.png"><h3>Для детей</h3></a>
+		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_for_family.png"><h3>Для всей семьи</h3></a>
+		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_for_two.png"><h3>Для двоих</h3></a>
+		<a href="/product-category/prostye/"><img src="<?php bloginfo('template_url') ?>/build/images/cat_for_company.png"><h3>Для компании</h3></a>
 	</div><!-- .popular_cat -->
 
 	<div class="front_products_wrap container">
@@ -110,45 +110,46 @@
 								   <button type="submit" class="single_add_to_cart_button button alt">Добавить в корзину</button>
 								</form>
 				            </div>
-				        </div><!-- .product_item -->
+				        
+					        <div class="attr_product">
 
-				        <div class="attr_product">
+					          <div class="atribute_wrap type">
+					          	  <p class="atribute_item">
+			                          <?php echo $product->get_attribute('tip-igr'); ?>,
+			                      </p>
+					          </div>
+					            
+			                  <div class='atribute_wrap vremya-igry'>
+			                      <span class='atribute_img'></span>
+			                      <p class="atribute_item">
+			                          <?php echo $product->get_attribute('vremya-igry'); ?>
+			                      </p>
+			                  </div>
 
-				          <div class="atribute_wrap type">
-				          	  <p class="atribute_item">
-		                          <?php echo $product->get_attribute('tip-igr'); ?>,
-		                      </p>
-				          </div>
-				            
-		                  <div class='atribute_wrap vremya-igry'>
-		                      <span class='atribute_img'></span>
-		                      <p class="atribute_item">
-		                          <?php echo $product->get_attribute('vremya-igry'); ?>
-		                      </p>
-		                  </div>
+			                  <div class='atribute_wrap kolichestvo-igrokov'>
+			                      <span class='atribute_img'></span>
+			                      <p class="atribute_item">Ко-во игроков: 
+			                        <?php echo $product->get_attribute('kolichestvo-igrokov'); ?>
+			                      </p>
+			                  </div>
 
-		                  <div class='atribute_wrap kolichestvo-igrokov'>
-		                      <span class='atribute_img'></span>
-		                      <p class="atribute_item">Ко-во игроков: 
-		                        <?php echo $product->get_attribute('kolichestvo-igrokov'); ?>
-		                      </p>
-		                  </div>
+			                  <div class='atribute_wrap vozrast'>
+			                      <span class='atribute_img'></span>
+			                      <p class="atribute_item">Возраст: 
+			                          <?php echo $product->get_attribute('vozrast'); ?>
+			                      </p>
+			                  </div>
 
-		                  <div class='atribute_wrap vozrast'>
-		                      <span class='atribute_img'></span>
-		                      <p class="atribute_item">Возраст: 
-		                          <?php echo $product->get_attribute('vozrast'); ?>
-		                      </p>
-		                  </div>
+			                  <div class='atribute_wrap yazyk'>
+			                      <span class='atribute_img'></span>
+			                      <p class="atribute_item">Язык: 
+			                          <?php echo $product->get_attribute('yazyk'); ?>
+			                      </p>
+			                  </div>            
+					            
+							</div><!-- .attr_product -->
 
-		                  <div class='atribute_wrap yazyk'>
-		                      <span class='atribute_img'></span>
-		                      <p class="atribute_item">Язык: 
-		                          <?php echo $product->get_attribute('yazyk'); ?>
-		                      </p>
-		                  </div>            
-				            
-						</div><!-- .attr_product -->
+						</div><!-- .product_item -->
 
 		            <?php endwhile; ?>      
 				    <?php else: ?>
@@ -185,3 +186,5 @@
 <?php endif; ?>
 
 <?php get_footer(); ?>
+
+

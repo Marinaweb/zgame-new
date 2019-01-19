@@ -1,0 +1,80 @@
+footer {
+	padding: 35px 0 75px 0;
+	background-color: #2d2d2d;
+	.footer_inner {
+		display: flex;
+		.tel_f {
+			display: flex;
+			flex-direction: column;
+			color: #ffffff;
+			font-family: Lato;
+			font-size: 17px;
+			line-height: 33px;
+			font-weight: 400;
+			font-size: 16px;
+			a {
+				color: #ffffff;
+			}
+			p {
+				line-height: 32px;
+			}
+		}
+		.contacts_foo {
+			flex: 0 1 22%;
+			border-right: 1px solid #acacac;
+			i {
+				height: 28px;
+				width: 28px;
+				display: block;
+				float: left;
+				margin-right: 10px;
+			}
+			.tel {
+				font-family: Lato;
+				font-size: 20px;
+				font-weight: 500;
+				color: #ffffff;
+				i {
+					background: url("../images/time_icon.png") no-repeat;
+				}
+			}
+			.viber {
+				font-family: Lato;
+				font-size: 20px;
+				font-weight: 500;
+				color: #ffffff;
+				i {
+					background: url("../images/viber_icon.png") no-repeat;
+				}
+			}
+			.email i {
+				background: url("../images/email_icon.png") no-repeat;
+			}
+			.address i {
+				background: url("../images/place_icon.png") no-repeat;
+			}
+			.time i {
+				background: url("../images/time_icon.png") no-repeat;
+			}
+		}
+		.information_foo {
+			flex: 0 1 23%;
+			padding-left: 25px; 
+		}
+		h3 {
+			color: #ffffff;
+			font-family: "Lato - Semibold";
+			font-size: 30px;
+			font-weight: 400;
+			letter-spacing: -0.75px;
+			margin-bottom: 30px;
+		}
+		.footer_menu li a {
+			color: #ffffff;
+			font-family: Lato;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 30px;
+		}
+	}
+}

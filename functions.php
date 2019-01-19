@@ -61,6 +61,7 @@ function register_my_widgets(){
 }
 add_action( 'widgets_init', 'register_my_widgets' );
 
+
 //Ajax Обновление кратких данных из корзины *************************************
 // *******************************************************************************
 add_filter('woocommerce_add_to_cart_fragments', 'cpp_header_add_to_cart_fragment');
@@ -70,8 +71,6 @@ function cpp_header_add_to_cart_fragment( $fragments ) {
     ob_start(); ?>
     
     <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>">
-        
-        <i class="<?php echo $cart_icon; ?>"></i>
         <span class="basket-btn__counter">
             <?php echo WC()->cart->get_cart_contents_count(); ?> 
         </span>

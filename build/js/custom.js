@@ -57,7 +57,7 @@ jQuery(document).ready(function() {
 	        cssEase: 'linear',
 	        touchMove: true
 	    }); 
-    }, 300);
+    }, 500);
 
 	// To add poster to youtube video 
 	  // poster frame click event
