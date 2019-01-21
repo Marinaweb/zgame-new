@@ -65,17 +65,24 @@
 	<div class="front_products_wrap container">
 		<h2 class="h2_title">Хиты продаж</h2>
 		<div class="front_products_inner">
-			<aside class="sidebar">
+			<aside class="sidebar sidebar_cat">
 				<h3>Подбор игры</h3>
-				<?php dynamic_sidebar( 'filter-woocommerce' ); ?>
+				<?php dynamic_sidebar( 'filter-category' ); ?>
 			</aside>
 			<div class="front_products main_part">
 
 				<div class="main_part_inner">
 				     <?php 
+				        $tax_query[] = array(
+					        'taxonomy' => 'product_visibility',
+					        'field'    => 'name',
+					        'terms'    => 'featured',
+					        'operator' => 'IN',
+					    );
 				        $args = array(
 				          'post_type' => 'product', 
 				          'posts_per_page' => 8,
+				          'tax_query'  => $tax_query,
 				        );
 				        $loop = new WP_Query($args);
 
@@ -85,15 +92,23 @@
 				      	<div class="product_item">
 				      	    <div class="game_img"><?php echo get_the_post_thumbnail( $post->ID, 'middle' ); ?></div>
 				      	    <a class="game_title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
 				      	    <div class="price_stock"> 
-				                <div class="price">
-				                    <p class="from">
-					                    <?php if ( $product->is_type( 'variable' ) ) {
-					                        echo "от ";
-					                    } ?>                  
-					                </p>
-					                <?php echo $product->get_price_html(); ?>               
-					            </div>
+
+ 								<?php if ( $product->is_type( 'variable' ) ): ?>
+					                <div class="price_variable">
+					                    <p class="from">от</p>
+						                <?php echo $product->get_price_html(); ?>               
+						            </div>
+					        	<?php endif; ?>
+
+					        	<?php if ( $product->is_type( 'simple' ) ): ?>
+					                <div class="price">
+						                <?php echo $product->get_price_html(); ?>               
+						            </div>
+					        	<?php endif; ?>
+					        
+
 					            <div class="in_stock">
 					                <?php if (get_post_meta(get_the_ID(), '_stock_status', true) == 'outofstock') {
 					                    echo '<div class="outofstock">Нет в наличии</div>';
@@ -107,7 +122,12 @@
 				            	<?php echo do_shortcode('[viewBuyButton]'); ?>		                
 								<form class="cart" method="post" enctype='multipart/form-data'>
 								   <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
-								   <button type="submit" class="single_add_to_cart_button button alt">Добавить в корзину</button>
+								   <?php if ( $product->is_type( 'variable' ) ): ?>
+								   		<a class="single_add_to_cart_button button alt" href="<?php the_permalink(); ?>">Выбрать игру</a>
+								   <?php endif; ?>
+								   <?php if ( $product->is_type( 'simple' ) ): ?>
+								   		<button type="submit" class="single_add_to_cart_button button alt">Добавить в корзину</button>
+								   <?php endif; ?>
 								</form>
 				            </div>
 				        
