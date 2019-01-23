@@ -26,6 +26,7 @@
 	?>
 
 	<div class="woo_products main_part">
+		<span class="filter_icon"></span>
 	    <?php woocommerce_breadcrumb(); ?>
 	    <div class="page_content">
 	        <?php woocommerce_content(); ?>

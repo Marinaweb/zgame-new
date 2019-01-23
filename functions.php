@@ -37,6 +37,7 @@ function woocommerce_support() {
 // Menu *****************************************************************************************
 // **********************************************************************************************
 register_nav_menu('header_menu', 'Основное меню');
+register_nav_menu('header_menu_mobile', 'Мобильное меню');
 register_nav_menu('header_menu_top', 'Верхнее меню в шапке');
 register_nav_menu('footer_menu', 'Меню в футере');
 
@@ -230,6 +231,22 @@ function devise_woo_get_pa(){
 add_action('woocommerce_single_product_summary', 'devise_woo_get_pa', 100);
 add_action('woocommerce_after_shop_loop_item', 'devise_woo_get_pa', 20);
 
+
+
+// Добавить acf поле в карточку товара
+function acf_product(){
+    global $product;
+    $file = get_field('file');
+    if( $file ):  
+       echo '<a class="download_file" href="';
+       echo $file['url'];
+       echo '" download>скачать полное описание</a>';
+    endif; 
+    }
+add_action('woocommerce_single_product_summary', 'acf_product', 150);
+
+
+
 // Переименование вкладки "Дополнительная информация" в "Характеристики"
 add_filter( 'woocommerce_product_tabs', 'devise_woo_rename_reviews_tab', 98);
 function devise_woo_rename_reviews_tab($tabs) {
@@ -248,7 +265,7 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_a
 // add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_single_meta',  5 );
 
 // Карточка товара
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+// remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price',  10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart',  30 );
@@ -286,4 +303,13 @@ function cpp_header_add_to_cart_fragment( $fragments ) {
     <?php
     $fragments['a.cart-contents'] = ob_get_clean();
     return $fragments;
+}
+
+// related_products
+add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
+function jk_related_products_args( $args ) {
+ 
+$args['posts_per_page'] = 12; // количество "Похожих товаров"
+ $args['columns'] = 4; // количество колонок
+ return $args;
 }

@@ -16,6 +16,8 @@
 			<?php wp_nav_menu(array('theme_location'=>'footer_menu', 'menu_class'=>'footer_menu')); ?>
 		</div>
 	</div>
+
+	<div class="popup-bg"></div>
 </footer>
 
 <?php wp_footer(); ?>

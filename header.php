@@ -32,7 +32,7 @@
 					</div>
 				</div>
 				<div class="search_h">
-					<?php dynamic_sidebar( 'search-sidebar' ); ?>
+					<?php echo do_shortcode('[wcas-search-form]'); ?>
 				</div>
 				<div class="basket_h">
 					<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>">
@@ -52,6 +52,50 @@
 				</div>
 			</div>			
 		</div>
+
+
+		<div class="mobile_header">
+
+			<div class="logo_h">
+				<a href="/"><img src="<?php bloginfo('template_url') ?>/build/images/logo.png"></a>
+			</div><!-- .logo_h -->
+
+			<div class="tel_h">
+				<span class="tel_mob_icon"></span>	
+				<div class="tel_mob_all">
+					<a class="tel_1" href="tel:+380974239753"><i></i>(097) 423-97-53</a>
+					<a class="tel_2" href="viber://chat?number=+380632961946"><i></i>(063) 296-19-46</a>
+				</div>
+			</div><!-- .tel_h -->
+
+			<div class="call_me">
+				<a href="#modal_call" class="modalbox"></a>
+			</div><!-- .call_me -->
+
+			<div class="search_h">
+				<span class="search_icon"></span>
+				<?php echo do_shortcode('[wcas-search-form]'); ?>
+			</div><!-- .search_h -->
+
+			<div class="basket_h">
+				<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>">
+					<img src="<?php bloginfo('template_url') ?>/build/images/basket.png">
+					<span class="basket-btn__counter">
+			            <?php echo WC()->cart->get_cart_contents_count(); ?> 
+			        </span>
+				</a>
+			</div><!-- .basket_h -->
+
+			<div class="mobile_menu">
+				<div class="mobile_menu_icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<?php wp_nav_menu(array('theme_location'=>'header_menu_mobile', 'menu_class'=>'header_menu_mobile')); ?>
+				<span class="close">X</span>
+			</div><!-- .mobile_menu -->
+		</div><!-- .mobile_header -->
 
 	</header><!-- #header -->
 

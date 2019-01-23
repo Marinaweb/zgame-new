@@ -358,3 +358,135 @@ body.woocommerce-checkout .form-row  {
 		}
     }
 }
+.download_file {
+	color: #ffffff;
+	padding: 6px;
+	background: #61a3a7;
+	text-align: center;
+	border-radius: 5px;
+	width: 70%;
+	margin-left: 15px;
+}
+.woocommerce .widget_price_filter .price_slider_amount {
+	flex-direction: column-reverse;
+    display: flex;
+    align-items: flex-start;
+}
+.woocommerce div.product form.cart .variations td.label {
+	width: 100%;
+}
+.related.products {
+	h2 {
+		margin-bottom: 25px;
+		font-size: 26px;
+		line-height: 28px;
+	}
+	.add_to_cart_button,
+	.clickBuyButton  {
+		margin: 8px 0 0 0 !important;
+	    text-align: center;
+	    background: #61a3a7 !important;
+	    color: white !important;
+	    font-size: 14px !important;
+	    font-weight: 400 !important;
+	    height: 33px;
+	    border: 1px solid #b2aba5 !important;
+	    border-radius: 3px;
+	    width: 100%;
+	    font-family: "Arial";
+	    &:hover {
+		    box-shadow: none !important;
+		    background: #5c9b9f !important;
+		}
+	}
+	.attr_product {
+    	margin-left: -20px;
+	}
+	del {
+		display: none !important;
+	}
+	.woocommerce-Price-amount.amount {
+		display: block !important;
+		font-size: 27px !important;
+	}
+	.product-type-variable .woocommerce-Price-amount.amount:last-child {
+		display: none !important;
+	}
+	.instock_inner {
+		font-size: 15px;
+	}
+	li.product {
+		width: 24% !important;
+		margin: 0 1% 20px 0 !important;
+		height: 460px;
+	}
+	.price {
+		height: 40px !important;
+	}
+	.product-type-variable .price {
+		justify-content: flex-start;
+		height: 47px !important;
+	}
+	.woocommerce-loop-product__title {
+		margin-bottom: 5px !important;
+    margin-top: 5px !important;
+	}
+}
+.upsells.products {
+	padding-left: 10px;
+	padding-top: 15px;
+	& > h2 {
+		font-size: 18px;
+		line-height: 18px;
+		margin-bottom: 10px;
+		text-decoration: underline;
+	}
+	.game_img,
+	.onsale,
+	.instock_inner,
+	.clickBuyButton,
+	.attr_product,
+	.button,
+	img {
+		display: none !important;
+	}
+	li.product {
+		clear: both !important;
+		width: 100% !important;
+		border: 0 !important;
+		padding: 0 10px !important;
+		margin: 0 0 5px 0 !important;
+		margin-bottom: 5px !important;
+		&:hover {
+			box-shadow: 0px 2px 2px 1px rgba(112, 112, 112, 0.5) !important;
+		}
+		h2 {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			float: left;
+			width: 72%;
+			font-size: 16px !important;
+			padding: 0 !important;
+		}
+		.price{
+			border: 0 !important;
+			height: auto !important;
+			float: right;
+			padding: 0 !important;
+			width: 27%;
+			margin-bottom: 0 !important;
+			.woocommerce-Price-amount.amount {
+				font-size: 15px !important;
+			}
+			.woocommerce-Price-currencySymbol {
+				font-size: 14px !important;
+			}
+			del {
+				display: none !important;
+			}
+		}
+	}
+}
+.summary.entry-summary .attr_product {
+	padding: 0 25px;
+}

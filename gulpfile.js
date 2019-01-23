@@ -104,9 +104,8 @@ gulp.task('images', images);
 gulp.task('watch', watch);
 
 gulp.task('build', gulp.series(clean, //пересоберет заново все
-		gulp.parallel(sass_my, scripts_custom, images, css_libs, scripts_libs)
+		gulp.parallel(sass_my, scripts_custom, images, css_libs, scripts_libs, fonts)
 		//здесь либо названия функций без '' либо название таска в''
-		//  fonts,
 	));
 
 gulp.task('dev', gulp.series('build', 'watch')); //пересоберет заново все + запустит watcher

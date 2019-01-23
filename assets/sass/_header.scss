@@ -1,3 +1,6 @@
+.mobile_header {
+display: none;
+}
 .header_first {
 	background: url("../images/header_bg.jpg") no-repeat;
 	.header_top {
@@ -77,28 +80,42 @@
 			font-size: 16px;
 			font-weight: 500;
 			margin-top: 8px;
-			margin-left: 25px;
+			margin-left: 15px;
 		}
 	}	
 	.search_h {
 		flex-grow: 2;
-		.widget_product_search {
+		.dgwt-wcas-search-wrapp {
 			position: relative;
     		max-width: 350px;
+    		margin: 0 !important;
 		}
-		.search-field {
-			width: 100%;
-			max-width: 350px;
+		.dgwt-wcas-search-input {
+		    width: 100% !important;
+		    max-width: 350px;
+		    height: 45px !important;
+		    border: 0 !important;
+		    border-radius: 0 !important;
+		    box-shadow: 0 0 5px rgba(112, 112, 112, 0.3);
+		    background-color: #ffffff !important;
+		    font-family: Lato;
+		    font-size: 16px !important;
+		    color: #b8b8b8;
+		    padding: 0 35px 0 20px !important;
+		    &::placeholder {
+		    	font-style: normal !important;
+		    	font-size: 16px !important;
+		    	color: #b8b8b8;
+		    }
+		}
+		.dgwt-wcas-sf-wrapp button.dgwt-wcas-search-submit {
 			height: 45px;
-			border: 0;
-			box-shadow: 0 0 5px rgba(112, 112, 112, 0.3);
-			background-color: #ffffff;
-			font-family: Lato;
-			font-size: 16px;
-			color: #b8b8b8;
-			padding: 0 35px 0 20px;
 		}
-		button {
+		.dgwt-wcas-ico-magnifier {
+			height: 50% !important;
+		}
+
+/*		button {
 			font-size: 0;
 			background: url("../images/search.png") no-repeat; 
 			height: 20px;
@@ -108,7 +125,7 @@
 		    right: 14px;
 		    border: 0;
 		    cursor: pointer;
-		}
+		}*/
 	}
 }
 
@@ -149,6 +166,10 @@
 		li {
 			flex-grow: 1;
 			text-align: center;
+			height: 100%;
+			display: flex;
+    		justify-content: center;
+    		align-items: center;
 			a {
 				font-family: "Lato - Semibold";
 				font-size: 20px;
@@ -178,16 +199,25 @@
 			}
 		}
 		&.visible_menu {
-			display: block;
+			display: block ;
     		width: 65%;
+    		left: 0;
 			z-index: 5;
-    		position: relative;
+    		position: absolute;
     		box-shadow: 0 0 5px 1px rgba(112, 112, 112, 0.5);
 			background-color: #ffffff;
-			top: 0;
+			top: 58px;
 			padding: 20px 0 5px 20px;
 			li {
 				margin-bottom: 0 !important;
+				justify-content: flex-start;
+				a {
+					display: flex;
+				}
+				h2 {
+					font-size: 14px !important;
+    				text-transform: none;
+				}
 			}
 			.woocommerce-loop-category__title {
 				font-family: "Lato - Semibold";
@@ -211,4 +241,13 @@
 		bottom: 11px;
 		left: 31px;
 	}
+}
+.header_menu {
+	position: relative;
+}
+.fixed_basket {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px;
+    z-index: 100;
 }

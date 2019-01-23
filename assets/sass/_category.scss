@@ -332,3 +332,18 @@ margin-bottom: 0;
 .woocommerce span.onsale {
 	z-index: 4;
 }
+.woo_products .page-title {
+	margin-top: -30px;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+		background: #61a3a7;
+    	color: #ffffff;
+}
+.woocommerce-pagination	.page-numbers {
+	color: black;
+}
+
+.filter_icon {
+	display: none;
+}

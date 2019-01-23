@@ -63,7 +63,7 @@
 	</div><!-- .popular_cat -->
 
 	<div class="front_products_wrap container">
-		<h2 class="h2_title">Хиты продаж</h2>
+		<h2 class="h2_title"><span class="filter_icon"></span>Хиты продаж</h2>
 		<div class="front_products_inner">
 			<aside class="sidebar sidebar_cat">
 				<h3>Подбор игры</h3>

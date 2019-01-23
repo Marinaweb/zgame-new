@@ -51,6 +51,7 @@
 	justify-content: space-around;
 	text-align: center; 
 	padding: 40px 0;
+	align-items: flex-end;
 	a {
 		flex: 1;
 		h3 {
@@ -119,6 +120,7 @@
 					line-height: 30px;
 					.woocommerce-Price-currencySymbol {
 						font-size: 18px;
+						padding-top: 5px;
 					}					
 				}
 				ins {
@@ -366,6 +368,9 @@ a.single_add_to_cart_button {
 	background-color: #f3f3f3;
 	padding: 25px 0;
 	margin-bottom: 50px;
+	.testimonials_slider {
+		padding: 0 15px;
+	}
 	.slick-slide {
 		padding: 0 20px;
 		h5 {
@@ -397,7 +402,7 @@ a.single_add_to_cart_button {
 .slick-next.slick-arrow {
 	position: absolute;
 	top: 50%;
-	right: -64px;
+	right: -40px;
 	height: 108px;
 	width: 64px;
 	margin-top: -54px;
@@ -409,7 +414,7 @@ a.single_add_to_cart_button {
 .slick-prev.slick-arrow {
 	position: absolute;
 	top: 50%;
-	left: -64px;
+	left: -40px;
 	height: 108px;
 	width: 64px;
 	margin-top: -54px;
@@ -417,6 +422,7 @@ a.single_add_to_cart_button {
 	border: 0;
 	background: url("../images/arrow_prev.png") no-repeat;
 	cursor: pointer;
+	z-index: 5;
 }
 .video_games {
 	margin-bottom: 50px;
@@ -448,4 +454,10 @@ a.single_add_to_cart_button {
 	a:hover {
 		    color: #d75149;
 	}
+}
+.yrc-shell.yrc-free-v {
+	padding: 0 15px;
+}
+.about_img img {
+	max-width: initial;
 }
